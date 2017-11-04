@@ -31,17 +31,24 @@ public class StudentServiceRest implements StudentService {
 	}
 
 	@Override
+	public List<StudentModel> selectAllStudents() {
+		log.info("REST - select all students");
+		return studentDAO.selectAllStudents();
+	}
+
+	@Override
 	public CourseModel selectCourse(String id) {
 		log.info("REST - select course with id {}", id);
 		return courseDAO.selectCourse(id);
 	}
 
 	@Override
-	public List<StudentModel> selectAllStudents() {
-		log.info("REST - select all students");
-		return studentDAO.selectAllStudents();
+	public List<CourseModel> selectAllCourses() {
+		log.info("REST - select all courses");
+		return courseDAO.selectAllCourses();
 	}
 
+	
 	@Override
 	public void addStudent(StudentModel student) {
 		// TODO Auto-generated method stub
@@ -59,11 +66,4 @@ public class StudentServiceRest implements StudentService {
 		// TODO Auto-generated method stub
 
 	}
-	
-	@Override
-	public List<CourseModel> selectAllCourses() {
-		log.info("REST - select all courses");
-		return courseDAO.selectAllCourses();
-	}
-
 }

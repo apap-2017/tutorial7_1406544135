@@ -70,6 +70,6 @@ public interface StudentMapper {
 			+ "from studentcourse join student "
 			+ "on studentcourse.npm = student.npm " 
 			+ "where studentcourse.id_course = #{id_course}")
-	List<StudentModel> selectStudentClass(@Param("id_course") String id_course);
+	List<StudentModel> selectStudentClass(@Param("id_course") String id_course);	
 	
 }
