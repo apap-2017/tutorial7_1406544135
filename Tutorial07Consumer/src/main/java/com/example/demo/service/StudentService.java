@@ -12,7 +12,7 @@ public interface StudentService
     CourseModel selectCourse (String id);
 
     List<StudentModel> selectAllStudents ();
-
+    List<CourseModel> selectAllCourses ();
 
     void addStudent (StudentModel student);
 

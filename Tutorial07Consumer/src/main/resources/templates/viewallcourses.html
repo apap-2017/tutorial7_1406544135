@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>View All Courses</title>
+    </head>
+    <body>
+        <h1>All Courses</h1>
+    	<div th:each="course,iterationStatus: ${courses}">
+            <h3 th:text="'No. ' + ${iterationStatus.count}">No. 1</h3>
+	       	<h3 th:text = "${course.name} + '-' + ${course.credits} + ' sks'" ></h3>
+	   </div>
+    </body>
+</html>

@@ -88,7 +88,6 @@ public class StudentController
         return "viewall";
     }
 
-
     @RequestMapping("/student/delete/{npm}")
     public String delete (Model model, @PathVariable(value = "npm") String npm)
     {

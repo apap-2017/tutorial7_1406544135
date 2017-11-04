@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.dao.CourseDAO;
 import com.example.demo.dao.StudentDAO;
 import com.example.demo.model.CourseModel;
 import com.example.demo.model.StudentModel;
@@ -20,6 +21,9 @@ public class StudentServiceRest implements StudentService {
 	@Autowired
 	private StudentDAO studentDAO;
 
+	@Autowired
+	private CourseDAO courseDAO;
+
 	@Override
 	public StudentModel selectStudent(String npm) {
 		log.info("REST - select student with npm {}", npm);
@@ -28,13 +32,13 @@ public class StudentServiceRest implements StudentService {
 
 	@Override
 	public CourseModel selectCourse(String id) {
-		// TODO Auto-generated method stub
-		return null;
+		log.info("REST - select course with id {}", id);
+		return courseDAO.selectCourse(id);
 	}
 
 	@Override
 	public List<StudentModel> selectAllStudents() {
-		log . info ( "REST - select all students" );
+		log.info("REST - select all students");
 		return studentDAO.selectAllStudents();
 	}
 
@@ -54,6 +58,12 @@ public class StudentServiceRest implements StudentService {
 	public void deleteStudent(String npm) {
 		// TODO Auto-generated method stub
 
+	}
+	
+	@Override
+	public List<CourseModel> selectAllCourses() {
+		log.info("REST - select all courses");
+		return courseDAO.selectAllCourses();
 	}
 
 }

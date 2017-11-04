@@ -71,4 +71,5 @@ public interface StudentMapper {
 			+ "on studentcourse.npm = student.npm " 
 			+ "where studentcourse.id_course = #{id_course}")
 	List<StudentModel> selectStudentClass(@Param("id_course") String id_course);
+	
 }
